@@ -25,7 +25,7 @@
 
 
 
-angular.module('adf', ['adf.provider', 'ui.bootstrap'])
+angular.module('adf', ['adf.provider'])
   .value('adfTemplatePath', '../src/templates/')
   .value('rowTemplate', '<adf-dashboard-row row="row" adf-model="adfModel" options="options" edit-mode="editMode" ng-repeat="row in column.rows" />')
   .value('columnTemplate', '<adf-dashboard-column column="column" adf-model="adfModel" options="options" edit-mode="editMode" ng-repeat="column in row.columns" />')
@@ -59,7 +59,7 @@ angular.module('adf', ['adf.provider', 'ui.bootstrap'])
 /* global angular */
 angular.module('adf')
   .directive('adfDashboardColumn', ["$log", "$compile", "$rootScope", "adfTemplatePath", "rowTemplate", "dashboard", function ($log, $compile, $rootScope, adfTemplatePath, rowTemplate, dashboard) {
-    
+
 
     /**
      * moves a widget in between a column
@@ -274,7 +274,7 @@ angular.module('adf')
 
 angular.module('adf')
   .directive('adfDashboard', ["$rootScope", "$log", "$timeout", "$uibModal", "dashboard", "adfTemplatePath", function ($rootScope, $log, $timeout, $uibModal, dashboard, adfTemplatePath) {
-    
+
 
     function stringToBoolean(string){
       switch(angular.isDefined(string) ? string.toLowerCase() : null){
@@ -934,7 +934,7 @@ angular.module('adf.provider', [])
 /* global angular */
 angular.module('adf')
   .directive('adfDashboardRow', ["$compile", "adfTemplatePath", "columnTemplate", function ($compile, adfTemplatePath, columnTemplate) {
-    
+
 
     return {
       restrict: 'E',
